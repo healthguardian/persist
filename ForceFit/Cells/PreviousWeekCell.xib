@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PreviousWeekCell" customModule="ForceFit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WB-sV-uIL">
+                        <rect key="frame" x="26" y="16" width="149" height="42.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From 10/07 to 10/07" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="SSi-6I-RAg">
+                                <rect key="frame" x="0.0" y="0.0" width="149" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1fi-rY-cgg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                <color key="textColor" red="0.30588235289999999" green="0.33333333329999998" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwV-M0-lgF">
+                                <rect key="frame" x="0.0" y="21" width="149" height="21"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                <color key="textColor" red="0.52549019607843139" green="0.55686274509803924" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="KwV-M0-lgF" firstAttribute="top" secondItem="SSi-6I-RAg" secondAttribute="bottom" id="ODd-TW-VPK"/>
+                            <constraint firstItem="SSi-6I-RAg" firstAttribute="top" secondItem="4WB-sV-uIL" secondAttribute="top" id="OdT-kZ-jmu"/>
+                            <constraint firstItem="KwV-M0-lgF" firstAttribute="leading" secondItem="4WB-sV-uIL" secondAttribute="leading" id="URF-a2-930"/>
+                            <constraint firstItem="SSi-6I-RAg" firstAttribute="leading" secondItem="4WB-sV-uIL" secondAttribute="leading" id="f2q-RI-ySP"/>
+                            <constraint firstAttribute="bottom" secondItem="KwV-M0-lgF" secondAttribute="bottom" id="fMQ-tg-DU2"/>
+                            <constraint firstAttribute="trailing" secondItem="KwV-M0-lgF" secondAttribute="trailing" id="oo0-OJ-jrp"/>
+                            <constraint firstAttribute="trailing" secondItem="SSi-6I-RAg" secondAttribute="trailing" id="qEJ-FZ-0Xh"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeI-fO-vP3">
+                        <rect key="frame" x="285" y="16" width="64" height="42.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$3.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="oCO-Tg-Q2g">
+                                <rect key="frame" x="0.0" y="0.0" width="64" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="h1b-Iv-Ihf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                <color key="textColor" red="0.30588235289999999" green="0.33333333329999998" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaJ-oE-kpQ">
+                                <rect key="frame" x="0.0" y="21" width="64" height="22"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                <color key="textColor" red="0.52549019610000003" green="0.5568627451" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="TaJ-oE-kpQ" secondAttribute="bottom" id="0yV-ce-gzm"/>
+                            <constraint firstAttribute="trailing" secondItem="TaJ-oE-kpQ" secondAttribute="trailing" id="2S6-K2-5fk"/>
+                            <constraint firstItem="oCO-Tg-Q2g" firstAttribute="leading" secondItem="JeI-fO-vP3" secondAttribute="leading" id="QWG-kd-q1U"/>
+                            <constraint firstItem="TaJ-oE-kpQ" firstAttribute="top" secondItem="oCO-Tg-Q2g" secondAttribute="bottom" id="djJ-e3-P2N"/>
+                            <constraint firstItem="TaJ-oE-kpQ" firstAttribute="leading" secondItem="JeI-fO-vP3" secondAttribute="leading" id="e2c-8v-VWP"/>
+                            <constraint firstAttribute="trailing" secondItem="oCO-Tg-Q2g" secondAttribute="trailing" id="t5a-Ss-Qcu"/>
+                            <constraint firstItem="oCO-Tg-Q2g" firstAttribute="top" secondItem="JeI-fO-vP3" secondAttribute="top" id="uTr-nP-2KZ"/>
+                            <constraint firstAttribute="width" constant="64" id="x2e-Wc-NhE"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvd-3u-Dfk">
+                        <rect key="frame" x="206" y="16" width="64" height="42.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4/3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="53E-a7-S1i">
+                                <rect key="frame" x="0.0" y="0.0" width="64" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="MyD-xp-cD3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                <color key="textColor" red="0.30588235289999999" green="0.33333333329999998" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workouts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wm-WS-nRe">
+                                <rect key="frame" x="0.0" y="21" width="64" height="22"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                <color key="textColor" red="0.52549019610000003" green="0.5568627451" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Wm-WS-nRe" firstAttribute="leading" secondItem="rvd-3u-Dfk" secondAttribute="leading" id="0In-pG-9jp"/>
+                            <constraint firstAttribute="trailing" secondItem="53E-a7-S1i" secondAttribute="trailing" id="0NO-HB-7fL"/>
+                            <constraint firstAttribute="width" constant="64" id="3Rf-az-EMK"/>
+                            <constraint firstAttribute="trailing" secondItem="0Wm-WS-nRe" secondAttribute="trailing" id="DWI-qV-LUr"/>
+                            <constraint firstItem="53E-a7-S1i" firstAttribute="leading" secondItem="rvd-3u-Dfk" secondAttribute="leading" id="HLk-Vu-p3X"/>
+                            <constraint firstAttribute="bottom" secondItem="0Wm-WS-nRe" secondAttribute="bottom" id="Ha9-7R-ZIM"/>
+                            <constraint firstItem="53E-a7-S1i" firstAttribute="top" secondItem="rvd-3u-Dfk" secondAttribute="top" id="Vd5-iU-BmX"/>
+                            <constraint firstItem="0Wm-WS-nRe" firstAttribute="top" secondItem="53E-a7-S1i" secondAttribute="bottom" id="km3-g7-lQ7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JeI-fO-vP3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="1UP-Vw-g0Q"/>
+                    <constraint firstItem="JeI-fO-vP3" firstAttribute="leading" secondItem="rvd-3u-Dfk" secondAttribute="trailing" constant="15" id="2Y5-Fa-Wuq"/>
+                    <constraint firstItem="4WB-sV-uIL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="FIa-4d-8Bq"/>
+                    <constraint firstAttribute="bottom" secondItem="4WB-sV-uIL" secondAttribute="bottom" constant="16" id="FJT-3K-af6"/>
+                    <constraint firstItem="rvd-3u-Dfk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Fac-Aw-KBY"/>
+                    <constraint firstAttribute="bottom" secondItem="rvd-3u-Dfk" secondAttribute="bottom" constant="16" id="HL3-IR-7Cm"/>
+                    <constraint firstItem="4WB-sV-uIL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="Tyo-bw-ldL"/>
+                    <constraint firstAttribute="trailing" secondItem="JeI-fO-vP3" secondAttribute="trailing" constant="26" id="U5p-sm-LIN"/>
+                    <constraint firstAttribute="bottom" secondItem="JeI-fO-vP3" secondAttribute="bottom" constant="16" id="Wdx-PR-kSl"/>
+                    <constraint firstAttribute="trailing" secondItem="4WB-sV-uIL" secondAttribute="trailing" constant="200" id="tZ8-gT-5Qf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </tableViewCell>
+    </objects>
+</document>
