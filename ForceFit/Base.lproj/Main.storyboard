@@ -253,7 +253,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-7l-TOJ">
-                                <rect key="frame" x="177.5" y="363" width="21" height="20"/>
+                                <rect key="frame" x="177" y="363" width="21" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RpM-7l-TOJ" secondAttribute="height" multiplier="21:20" id="Nfz-g5-uRM"/>
                                 </constraints>
@@ -790,7 +790,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcj-Fr-5dj">
-                                <rect key="frame" x="176.5" y="397" width="23.5" height="22.5"/>
+                                <rect key="frame" x="177" y="397" width="21" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lcj-Fr-5dj" secondAttribute="height" multiplier="21:20" id="ekH-Uf-KnU"/>
                                 </constraints>
@@ -799,7 +799,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1NB-5H-RQD">
-                                <rect key="frame" x="16" y="435.5" width="343" height="56"/>
+                                <rect key="frame" x="16" y="433" width="343" height="56"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9b-1j-CH7">
                                         <rect key="frame" x="71" y="0.0" width="200" height="56"/>
@@ -918,7 +918,7 @@
         <scene sceneID="6Ux-7r-emi">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" id="mLK-FJ-bOe" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qpJ-qS-EO0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qpJ-qS-EO0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1025,7 +1025,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJ9-Ld-aSP">
-                                        <rect key="frame" x="198" y="22" width="43.5" height="13"/>
+                                        <rect key="frame" x="198.5" y="22" width="42.5" height="13"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                         <color key="textColor" red="0.52549019610000003" green="0.5568627451" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1183,7 +1183,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ContractSetupNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="5sD-PZ-awz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c2V-40-hOY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="c2V-40-hOY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1201,7 +1201,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ContractNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="pVs-fv-RCh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QhS-0B-4ai">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QhS-0B-4ai">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
