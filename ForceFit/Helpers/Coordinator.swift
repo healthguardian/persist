@@ -15,11 +15,11 @@ class Coordinator {
     }
     
     class func presentContractViewController() {
-        if UserDefaults.standard.bool(forKey: contractDidSetUpKey) {
-            self.presentControllerWithIdentifier(identifier: "ContractNavigationController")
-        } else {
-            self.presentControllerWithIdentifier(identifier: "ContractSetupNavigationController")
-        }
+        self.presentControllerWithIdentifier(identifier: "ContractNavigationController")
+    }
+    
+    class func presentContractSetupViewController() {
+        self.presentControllerWithIdentifier(identifier: "ContractSetupNavigationController")
     }
     
     private class func presentControllerWithIdentifier(identifier: String) {

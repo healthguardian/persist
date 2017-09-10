@@ -204,7 +204,6 @@ class ContractSetupViewController: BaseViewController, UICollectionViewDelegate,
         }
         
         let card = Card(name: cardName, number: cardNumber, month: month!, year: year!)
-        UserDefaults.standard.set(true, forKey: contractDidSetUpKey)
         self.showLoader()
         StripeManager.sharedInstance.createToken(with: card, completion: { (token, error) in
             guard token != nil else {

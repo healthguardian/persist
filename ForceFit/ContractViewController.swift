@@ -47,7 +47,7 @@ class ContractViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Private
     
     private func setupNavigationBar() {
-        self.navigationItem.title = "MY CONTRACT"
+        self.navigationItem.title = "MY WORKOUTS"
     }
     
     private func setupContractView() {

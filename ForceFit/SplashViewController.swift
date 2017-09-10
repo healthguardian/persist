@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class SplashViewController: UIViewController {
+class SplashViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,6 @@ class SplashViewController: UIViewController {
 
         UIApplication.shared.statusBarStyle = .lightContent
         
-        AuthManager.sharedInstance.signOut()
-        UserDefaults.standard.set(false, forKey: contractDidSetUpKey)
         Auth.auth().addStateDidChangeListener { (auth, user) in
             guard nil != user else {
                 Coordinator.presentHomeViewController()
@@ -30,6 +28,7 @@ class SplashViewController: UIViewController {
             
             FirebaseManager.sharedInstance.userWithIdentifier(identifier: user!.uid, completion: { (dict) in
                 guard let userDict = dict else {
+                    Coordinator.presentContractSetupViewController()
                     return
                 }
                 

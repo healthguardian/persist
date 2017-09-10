@@ -16,6 +16,10 @@ class AuthManager {
     
     static let sharedInstance = AuthManager()
     
+    var isLoggedIn: Bool {
+        return Auth.auth().currentUser != nil
+    }
+    
     func authListener(listener: @escaping (User?) -> Void) {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             guard let firebaseUser = user else {

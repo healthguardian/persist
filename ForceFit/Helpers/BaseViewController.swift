@@ -10,14 +10,6 @@ import UIKit
 import MBProgressHUD
 
 class BaseViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func showErrorAlert(title: String, message: String?, okCompletion: (() -> ())?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

@@ -8,7 +8,6 @@
 
 import Foundation
 
-let contractDidSetUpKey = "contractDidSetUp"
 let workoutsMaxValue = 7
 let workoutsMinValue = 2
 let penaltyMinValue = 5
