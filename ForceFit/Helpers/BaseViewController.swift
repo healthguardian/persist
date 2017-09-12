@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
     func showErrorAlert(title: String, message: String?, okCompletion: (() -> ())?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let OKAction = UIAlertAction(title: "OK", style: .default) { _ in
+        let OKAction = UIAlertAction(title: "OK".localized, style: .default) { _ in
             guard let completion = okCompletion else { return }
             completion()
         }

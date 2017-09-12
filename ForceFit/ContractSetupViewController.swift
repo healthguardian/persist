@@ -192,23 +192,23 @@ class ContractSetupViewController: BaseViewController, UICollectionViewDelegate,
         let year = cell.selectedYear
         
         if cardName == "" {
-            self.showErrorAlert(title: "Error", message: "Name on card field shouldn't be empty!", okCompletion: nil)
+            self.showErrorAlert(title: "Error".localized, message: "Name on card field shouldn't be empty!".localized, okCompletion: nil)
             return
         }
         if cardNumber == "" {
-            self.showErrorAlert(title: "Error", message: "Card number field shouldn't be empty!", okCompletion: nil)
+            self.showErrorAlert(title: "Error".localized, message: "Card number field shouldn't be empty!".localized, okCompletion: nil)
             return
         }
         if month == nil  {
-            self.showErrorAlert(title: "Error", message: "Month field shouldn't be empty!", okCompletion: nil)
+            self.showErrorAlert(title: "Error".localized, message: "Month field shouldn't be empty!".localized, okCompletion: nil)
             return
         }
         if year == nil {
-            self.showErrorAlert(title: "Error", message: "Year field shouldn't be empty!", okCompletion: nil)
+            self.showErrorAlert(title: "Error".localized, message: "Year field shouldn't be empty!".localized, okCompletion: nil)
             return
         }
         if !cell.isAgreeWithTerms() {
-            self.showErrorAlert(title: "Error", message: "You must agree with thees terms!", okCompletion: nil)
+            self.showErrorAlert(title: "Error".localized, message: "You must agree with thees terms!".localized, okCompletion: nil)
             return
         }
         
@@ -217,7 +217,7 @@ class ContractSetupViewController: BaseViewController, UICollectionViewDelegate,
         StripeManager.sharedInstance.createToken(with: card, completion: { (token, error) in
             guard token != nil else {
                 self.hideLoader()
-                self.showErrorAlert(title: "Error", message: error?.localizedDescription, okCompletion: nil)
+                self.showErrorAlert(title: "Error".localized, message: error?.localizedDescription, okCompletion: nil)
                 return
             }
             

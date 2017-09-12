@@ -38,7 +38,7 @@ class PaymentDetailsCell: UITableViewCell, UITextFieldDelegate {
     }
     var cardNumber: String {
         get {
-            if self.cardNumberTextField.text == "Card number" {
+            if self.cardNumberTextField.text == "Card number".localized {
                 return ""
             } else {
                 return self.cardNumberTextField.text!

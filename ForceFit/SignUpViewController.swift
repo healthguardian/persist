@@ -45,21 +45,21 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func onCreateButton(_ sender: Any) {
         let emailValidationError = ValidationManager.validate(email: self.emailTextField.text)
         guard emailValidationError == nil else {
-            self.showErrorAlert(title: "Error", message: emailValidationError, okCompletion: nil)
+            self.showErrorAlert(title: "Error".localized, message: emailValidationError, okCompletion: nil)
             return
         }
         let email = self.emailTextField.text!
         
         let passwordValidationError = ValidationManager.validate(password: self.passwordTextField.text)
         guard passwordValidationError == nil else {
-            self.showErrorAlert(title: "Error", message: passwordValidationError, okCompletion: nil)
+            self.showErrorAlert(title: "Error".localized, message: passwordValidationError, okCompletion: nil)
             return
         }
         let password = self.passwordTextField.text!
         
         let passwordConfirmationError = ValidationManager.confirm(passwords: password, confirmation: self.confirmTextField.text)
         guard passwordConfirmationError == nil else {
-            self.showErrorAlert(title: "Error", message: passwordConfirmationError, okCompletion: nil)
+            self.showErrorAlert(title: "Error".localized, message: passwordConfirmationError, okCompletion: nil)
             return
         }
         
@@ -67,14 +67,14 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         AuthManager.sharedInstance.createNewUser(email: email, password: password) { (user, error) in
             guard nil != user else {
                 self.hideLoader()
-                self.showErrorAlert(title: "Error", message: error?.localizedDescription, okCompletion: nil)
+                self.showErrorAlert(title: "Error".localized, message: error?.localizedDescription, okCompletion: nil)
                 return
             }
             
             AuthManager.sharedInstance.loginWithEmail(email: email, password: password) { (user, error) in
                 self.hideLoader()
                 guard user != nil else {
-                    self.showErrorAlert(title: "Error", message: error?.localizedDescription, okCompletion: nil)
+                    self.showErrorAlert(title: "Error".localized, message: error?.localizedDescription, okCompletion: nil)
                     return
                 }
                 
@@ -107,17 +107,17 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         var placeholderText = ""
         
         if textField == self.emailTextField {
-            placeholderText = "Enter your email"
+            placeholderText = "Enter your email".localized
         }
         
         if textField == self.passwordTextField {
             textField.isSecureTextEntry = true
-            placeholderText = "Create your password"
+            placeholderText = "Create your password".localized
         }
         
         if textField == self.confirmTextField {
             textField.isSecureTextEntry = true
-            placeholderText = "Confirm your password"
+            placeholderText = "Confirm your password".localized
         }
         
         if textField.text == placeholderText {
@@ -129,15 +129,15 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         var placeholderText = ""
         
         if textField == self.emailTextField {
-            placeholderText = "Enter your email"
+            placeholderText = "Enter your email".localized
         }
         
         if textField == self.passwordTextField {
-            placeholderText = "Create your password"
+            placeholderText = "Create your password".localized
         }
         
         if textField == self.confirmTextField {
-            placeholderText = "Confirm your password"
+            placeholderText = "Confirm your password".localized
         }
         
         if textField.text == "" {

@@ -45,14 +45,14 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func onLoginButton(_ sender: Any) {
         let emailValidationError = ValidationManager.validate(email: self.emailTextField.text)
         guard emailValidationError == nil else {
-            self.showErrorAlert(title: "Error", message: emailValidationError, okCompletion: nil)
+            self.showErrorAlert(title: "Error".localized, message: emailValidationError, okCompletion: nil)
             return
         }
         let email = self.emailTextField.text!
         
         let passwordValidationError = ValidationManager.validate(password: self.passwordTextField.text)
         guard passwordValidationError == nil else {
-            self.showErrorAlert(title: "Error", message: passwordValidationError, okCompletion: nil)
+            self.showErrorAlert(title: "Error".localized, message: passwordValidationError, okCompletion: nil)
             return
         }
         let password = self.passwordTextField.text!
@@ -61,7 +61,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         AuthManager.sharedInstance.loginWithEmail(email: email, password: password) { (user, error) in
             self.hideLoader()
             guard user != nil else {
-                self.showErrorAlert(title: "Error", message: error?.localizedDescription, okCompletion: nil)
+                self.showErrorAlert(title: "Error".localized, message: error?.localizedDescription, okCompletion: nil)
                 return
             }
             
@@ -97,12 +97,12 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         var placeholderText = ""
         
         if textField == self.emailTextField {
-            placeholderText = "Enter your email"
+            placeholderText = "Enter your email".localized
         }
         
         if textField == self.passwordTextField {
             textField.isSecureTextEntry = true
-            placeholderText = "Enter your password"
+            placeholderText = "Enter your password".localized
         }
         
         if textField.text == placeholderText {
@@ -114,11 +114,11 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         var placeholderText = ""
         
         if textField == self.emailTextField {
-            placeholderText = "Enter your email"
+            placeholderText = "Enter your email".localized
         }
         
         if textField == self.passwordTextField {
-            placeholderText = "Enter your password"
+            placeholderText = "Enter your password".localized
         }
         
         if textField.text == "" {
@@ -146,22 +146,22 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     }
     
     private func presentForgotPasswordAlert() {
-        let alertController = UIAlertController(title: "Forgot password?", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Forgot password?".localized, message: "", preferredStyle: .alert)
         alertController.addTextField { (textField) in
-            textField.placeholder = "Email Address"
+            textField.placeholder = "Email Address".localized
         }
-        let doneAction = UIAlertAction(title: "Done", style: .default) { (_) in
+        let doneAction = UIAlertAction(title: "Done".localized, style: .default) { (_) in
             guard let email = alertController.textFields?.first?.text else { return }
             AuthManager.sharedInstance.resetPassword(with: email, completion: { (error) in
                 if error != nil {
-                    self.showErrorAlert(title: "Error", message: "", okCompletion: nil)
+                    self.showErrorAlert(title: "Error".localized, message: "", okCompletion: nil)
                 } else {
-                    self.showErrorAlert(title: "Success", message: "", okCompletion: nil)
+                    self.showErrorAlert(title: "Success".localized, message: "", okCompletion: nil)
                 }
             })
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { (_) in }
         alertController.addAction(doneAction)
         alertController.addAction(cancelAction)
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DEBC2C81F67F75F005B2C0B /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBC2C71F67F75F005B2C0B /* String+Localized.swift */; };
 		8107C6431F4F42310021BF01 /* ForceFitCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8107C6421F4F42310021BF01 /* ForceFitCalculator.swift */; };
 		81091C3A1F42DC2400D50DD5 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81091C391F42DC2400D50DD5 /* UIUtils.swift */; };
 		81091C3B1F42E1A300D50DD5 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81091C371F42D30D00D50DD5 /* Lato-Regular.ttf */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		3072F021C49D1AB23B75A33E /* Pods-ForceFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForceFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForceFit/Pods-ForceFit.release.xcconfig"; sourceTree = "<group>"; };
+		3DEBC2C71F67F75F005B2C0B /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		63BD7EE85457B7ACC7D64F23 /* Pods_ForceFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForceFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8107C6421F4F42310021BF01 /* ForceFitCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForceFitCalculator.swift; path = Helpers/ForceFitCalculator.swift; sourceTree = "<group>"; };
 		81091C371F42D30D00D50DD5 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				81CE10301F45B20700432F0D /* UIView+Extensions.swift */,
+				3DEBC2C71F67F75F005B2C0B /* String+Localized.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				81091C4D1F43536F00D50DD5 /* Coordinator.swift in Sources */,
 				8155BBF51F48330C006F4786 /* StripeManager.swift in Sources */,
 				813424B41F47193B008702F3 /* Card.swift in Sources */,
+				3DEBC2C81F67F75F005B2C0B /* String+Localized.swift in Sources */,
 				F2678D5A1F3E5EA800E7D4D9 /* SignUpViewController.swift in Sources */,
 				812A50A61F46DC8D008E933B /* PaymentDetailsCell.swift in Sources */,
 				F2678D491F3CD2EC00E7D4D9 /* ForceFit.xcdatamodeld in Sources */,

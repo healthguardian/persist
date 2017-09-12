@@ -47,14 +47,14 @@ class ContractViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Private
     
     private func setupNavigationBar() {
-        self.navigationItem.title = "MY WORKOUTS"
+        self.navigationItem.title = "MY WORKOUTS".localized
     }
     
     private func setupContractView() {
         self.completedLabel.text = "0/" + String(UserSource.sharedInstance.currentUser()!.exercisesPerWeek)
         self.totalLabel.text = "0"
         self.rewardLabel.text = "$0.00"
-        self.penaltyLabel.text = "You pay $\(UserSource.sharedInstance.currentUser()!.penalty).00 per missed workout."
+        self.penaltyLabel.text = "You pay".localized + " $\(UserSource.sharedInstance.currentUser()!.penalty).00 " + "per missed workout.".localized
         self.modifyContractLabel.attributedText = NSAttributedString(string: self.modifyContractLabel.attributedText!.string, attributes: [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
     }
     
