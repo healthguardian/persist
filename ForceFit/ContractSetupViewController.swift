@@ -31,9 +31,18 @@ class ContractSetupViewController: BaseViewController, UICollectionViewDelegate,
     
     var pickerType: PickerType = .initial
     let months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
-    let years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
     var selectedMonth: String!
     var selectedYear: String!
+    
+    var years: [String] = {
+        let date = Date()
+        let calendar = Calendar.current
+        let currentYear = calendar.component(.year, from: date)
+        
+        let years = (currentYear...(currentYear + 10)).flatMap { String($0) }
+        
+        return years
+    }()
     
     let selectedPageColor = UIColor(red: 222.0/255.0, green: 21.0/255.0, blue: 29.0/255.0, alpha: 1.0)
     let deselectedPageColor = UIColor(red: 134.0/255.0, green: 142.0/255.0, blue: 150.0/255.0, alpha: 1.0)
