@@ -137,9 +137,12 @@ class ContractSetupViewController: BaseViewController, UICollectionViewDelegate,
             return collectionView.dequeueReusableCell(withReuseIdentifier: PenaltyCell.reuseIdentifier(), for: indexPath)
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaymentCell.reuseIdentifier(), for: indexPath) as! PaymentCell
+            let user = UserSource.sharedInstance.currentUser()
             cell.selectedYear = self.selectedYear
             cell.selectedMonth = self.selectedMonth
             cell.delegate = self
+            cell.penalty = user?.penalty ?? 0
+            cell.exercisesCount = user?.exercisesPerWeek ?? 0
             cell.reloadData()
             
             return cell

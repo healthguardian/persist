@@ -23,10 +23,20 @@ class TermsCell: UITableViewCell {
     
     var accepted = false
     
+    var exercisesCount: Int = 0
+    var penalty: Int = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let attributedContract = NSMutableAttributedString(string: "Contract - I commit to exercise at least [xx] times per week. Change\n\nPenalties - If I do not complete my [xx] workouts by the end of the week (Sunday 12:00pm), I will be charged [xx] US$ per workout missed. Change\n\nRewards - If I complete all my workouts by the end of the week, I will be rewarded [xx] US$.\n\nCancellations - I can cancel my contract anytime by tapping “Modify or cancel”. I can’t cancel a week in progress. Cancellations take effect starting the following week.", attributes: [NSFontAttributeName: UIFont(name: "Lato-Regular", size: 16.0)!, NSForegroundColorAttributeName: UIColor(red: 78.0/255.0, green: 85.0/255.0, blue: 91.0/255.0, alpha: 1.0)])
+        UIUtils.apply(borderColor: UIColor(red: 121.0/255.0, green: 200.0/255.0, blue: 59.0/255.0, alpha: 1.0), toView: self.checkboxView)
+    }
+    
+    func setupTerms() {
+        let reward = ForceFitCalculator.calculateWeeklyReward(penalty: penalty)
+        let terms = String(format: "Contract - I commit to exercise at least %li times per week.\n\nPenalties - If I do not complete my %li workouts by the end of the week (Sunday 12:00pm), I will be charged %li US$ per workout missed.\n\nRewards - If I complete all my workouts by the end of the week, I will be rewarded \(String(reward)) US$.\n\nCancellations - I can cancel my contract anytime by tapping “Modify or cancel”. I can’t cancel a week in progress. Cancellations take effect starting the following week.", exercisesCount, exercisesCount, penalty)
+        
+        let attributedContract = NSMutableAttributedString(string: terms, attributes: [NSFontAttributeName: UIFont(name: "Lato-Regular", size: 16.0)!, NSForegroundColorAttributeName: UIColor(red: 78.0/255.0, green: 85.0/255.0, blue: 91.0/255.0, alpha: 1.0)])
         let rangeOfContract = attributedContract.mutableString.range(of: "Contract")
         attributedContract.addAttributes([NSFontAttributeName: UIFont(name: "Lato-Bold", size: 16.0)!], range: rangeOfContract)
         let rangeOfPenalties = attributedContract.mutableString.range(of: "Penalties")
@@ -37,8 +47,6 @@ class TermsCell: UITableViewCell {
         attributedContract.addAttributes([NSFontAttributeName: UIFont(name: "Lato-Bold", size: 16.0)!], range: rangeOfCancellations)
         
         self.contractLabel.attributedText = attributedContract
-        
-        UIUtils.apply(borderColor: UIColor(red: 121.0/255.0, green: 200.0/255.0, blue: 59.0/255.0, alpha: 1.0), toView: self.checkboxView)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

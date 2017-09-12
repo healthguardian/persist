@@ -22,6 +22,9 @@ class PaymentCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSou
     
     var selectedMonth: String!
     var selectedYear: String!
+    var exercisesCount: Int = 0
+    var reward: Int = 0
+    var penalty: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -83,7 +86,9 @@ class PaymentCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSou
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TermsCell.reuseIdentifier())! as! TermsCell
             cell.delegate = self
-            
+            cell.penalty = penalty
+            cell.exercisesCount = exercisesCount
+            cell.setupTerms()
             return cell
         }
     }
