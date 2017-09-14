@@ -13,7 +13,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class FirebaseManager {
-    static let sharedInstance = FirebaseManager()
+    static let shared = FirebaseManager()
     let databaseRef: DatabaseReference!
     
     init() {
@@ -21,7 +21,7 @@ class FirebaseManager {
     }
     
     func userWithIdentifier(identifier: String, completion: @escaping ([String: AnyObject]?) -> ()) {
-        let userReference = self.usreReference(identifier: identifier)
+        let userReference = self.userReference(identifier: identifier)
         userReference.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let dict = snapshot.value as? [String: AnyObject] else {
                 completion(nil)
@@ -33,11 +33,11 @@ class FirebaseManager {
     
     func saveContract(exercises: Int, penalty: Int, cardToken: String, cardName: String, cardNumber: String, completion: @escaping () -> ()) {
         let userReference = self.currentUserReference()
-        userReference.observeSingleEvent(of: .value, with: { (snapshot) in
+        userReference?.observeSingleEvent(of: .value, with: { (snapshot) in
             completion()
         })
         
-        userReference.setValue(["number_of_exercises": exercises,
+        userReference?.setValue(["number_of_exercises": exercises,
                                 "penalty_value": penalty,
                                 "stripe_token": cardToken,
                                 "card_name": cardName,
@@ -46,11 +46,15 @@ class FirebaseManager {
     
     //MARK: - Private
     
-    private func currentUserReference() -> DatabaseReference {
-        return self.databaseRef.child("users").child(UserSource.sharedInstance.currentUser()!.userIdentifier)
+    func currentUserReference() -> DatabaseReference? {
+        guard let id = UserSource.sharedInstance.currentUser()?.userIdentifier else {
+            return nil
+        }
+        
+        return self.userReference(identifier: id)
     }
     
-    private func usreReference(identifier: String) -> DatabaseReference {
+    private func userReference(identifier: String) -> DatabaseReference {
         return self.databaseRef.child("users").child(identifier)
     }
 }

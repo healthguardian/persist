@@ -17,4 +17,5 @@ use_frameworks!
     pod 'FBSDKShareKit'
     
     pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'ObjectMapper'
 end

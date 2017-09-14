@@ -226,7 +226,7 @@ class ContractSetupViewController: BaseViewController, UICollectionViewDelegate,
             
             UserSource.sharedInstance.addCardToken(cardToken: token!)
             let user = UserSource.sharedInstance.currentUser()!
-            FirebaseManager.sharedInstance.saveContract(exercises: user.exercisesPerWeek, penalty: user.penalty, cardToken: token!, cardName: cardName, cardNumber: cardNumber, completion: {
+            FirebaseManager.shared.saveContract(exercises: user.exercisesPerWeek, penalty: user.penalty, cardToken: token!, cardName: cardName, cardNumber: cardNumber, completion: {
                 self.hideLoader()
                 Coordinator.presentContractViewController()
             })

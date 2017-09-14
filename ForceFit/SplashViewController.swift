@@ -26,7 +26,7 @@ class SplashViewController: BaseViewController {
                 return
             }
             
-            FirebaseManager.sharedInstance.userWithIdentifier(identifier: user!.uid, completion: { (dict) in
+            FirebaseManager.shared.userWithIdentifier(identifier: user!.uid, completion: { (dict) in
                 guard let userDict = dict else {
                     Coordinator.presentContractSetupViewController()
                     return

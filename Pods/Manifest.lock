@@ -57,6 +57,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - ObjectMapper (2.2.8)
   - Stripe (11.2.0)
 
 DEPENDENCIES:
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - MBProgressHUD (~> 1.0.0)
+  - ObjectMapper
   - Stripe
 
 SPEC CHECKSUMS:
@@ -88,8 +90,9 @@ SPEC CHECKSUMS:
   leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   Stripe: 898f83a95d72180c6eb4acd65b2ae6158fc6a8bd
 
-PODFILE CHECKSUM: 5c5b750ac7bb2eb91dede0f1c0369b456a2418d6
+PODFILE CHECKSUM: 32714a70909ca27d69c26691a9fba4d6fc547049
 
 COCOAPODS: 1.2.1

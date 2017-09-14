@@ -253,7 +253,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-7l-TOJ">
-                                <rect key="frame" x="177" y="363" width="21" height="20"/>
+                                <rect key="frame" x="177.5" y="363" width="21" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RpM-7l-TOJ" secondAttribute="height" multiplier="21:20" id="Nfz-g5-uRM"/>
                                 </constraints>
@@ -547,6 +547,9 @@
                                 <state key="normal" title="TRACK A WORKOUT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="trackPressed" destination="E4n-hj-Y92" eventType="touchUpInside" id="cvw-OM-Baa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -790,7 +793,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcj-Fr-5dj">
-                                <rect key="frame" x="177" y="397" width="21" height="20"/>
+                                <rect key="frame" x="177.5" y="397" width="21" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lcj-Fr-5dj" secondAttribute="height" multiplier="21:20" id="ekH-Uf-KnU"/>
                                 </constraints>

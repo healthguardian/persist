@@ -23,10 +23,20 @@ class ContractViewController: UIViewController, UITableViewDelegate, UITableView
         self.setupNavigationBar()
         self.setupTableView()
         self.setupContractView()
+        
+        subsribeToNotifications()
+        
+        WorkoutsManager.shared.prepare()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    private func subsribeToNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(ContractViewController.workoutsUpdated), name: WorkoutsManager.shared.workoutsChangedNotification, object: WorkoutsManager.shared)
+    }
+    
+    //MARK: Actions
+    
+    @IBAction private func trackPressed() {
+        WorkoutsManager.shared.addWorkout()
     }
     
     //MARK: - UITableViewDelegate/DataSource
@@ -61,5 +71,13 @@ class ContractViewController: UIViewController, UITableViewDelegate, UITableView
     private func setupTableView() {
         self.tableView.tableFooterView = UIView()
         self.tableView.register(PreviousWeekCell.nib(), forCellReuseIdentifier: PreviousWeekCell.reuseIdentifier())
+    }
+    
+    @objc func workoutsUpdated() {
+        updateCompleted()
+    }
+    
+    private func updateCompleted() {
+        self.completedLabel.text = String(WorkoutsManager.shared.workouts.count) + "/" + String(UserSource.sharedInstance.currentUser()!.exercisesPerWeek)
     }
 }
