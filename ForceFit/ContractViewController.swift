@@ -10,6 +10,7 @@ import UIKit
 
 class ContractViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var progressView: ProgressView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var completedLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
@@ -79,5 +80,7 @@ class ContractViewController: UIViewController, UITableViewDelegate, UITableView
     
     private func updateCompleted() {
         self.completedLabel.text = String(WorkoutsManager.shared.workouts.count) + "/" + String(UserSource.sharedInstance.currentUser()!.exercisesPerWeek)
+        
+        progressView.progress = CGFloat(min(1.0, Double(WorkoutsManager.shared.workouts.count)/Double(UserSource.sharedInstance.currentUser()!.exercisesPerWeek)))
     }
 }

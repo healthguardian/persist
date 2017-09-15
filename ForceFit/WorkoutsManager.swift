@@ -68,6 +68,4 @@ class WorkoutsManager {
                 self.workouts = workouts
             })
     }
-    
-    
 }

@@ -253,7 +253,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-7l-TOJ">
-                                <rect key="frame" x="177.5" y="363" width="21" height="20"/>
+                                <rect key="frame" x="177" y="363" width="21" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RpM-7l-TOJ" secondAttribute="height" multiplier="21:20" id="Nfz-g5-uRM"/>
                                 </constraints>
@@ -581,6 +581,7 @@
                         <outlet property="completedLabel" destination="YBe-7M-Eaf" id="SS3-2v-vuQ"/>
                         <outlet property="modifyContractLabel" destination="9WA-pt-QcV" id="QnJ-hr-gwp"/>
                         <outlet property="penaltyLabel" destination="mt8-dz-Ic0" id="YbJ-mD-xx8"/>
+                        <outlet property="progressView" destination="QY9-7w-gpg" id="kt2-nj-yLP"/>
                         <outlet property="rewardLabel" destination="cnY-gF-IxS" id="nXr-u9-hzt"/>
                         <outlet property="tableView" destination="2vB-tg-mDT" id="aPN-Sx-8f5"/>
                         <outlet property="totalLabel" destination="m1e-Lt-8tk" id="R0j-qT-8SP"/>
@@ -793,7 +794,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcj-Fr-5dj">
-                                <rect key="frame" x="177.5" y="397" width="21" height="20"/>
+                                <rect key="frame" x="177" y="397" width="21" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lcj-Fr-5dj" secondAttribute="height" multiplier="21:20" id="ekH-Uf-KnU"/>
                                 </constraints>
