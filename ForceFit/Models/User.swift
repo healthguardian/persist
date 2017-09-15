@@ -14,6 +14,7 @@ class User {
     var cardToken: String = ""
     var exercisesPerWeek: Int = 2
     var penalty: Int = 5
+    var paymentActive = false
     
     init(name: String, identifier: String) {
         self.name = name

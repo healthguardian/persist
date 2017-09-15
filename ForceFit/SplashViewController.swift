@@ -36,6 +36,7 @@ class SplashViewController: BaseViewController {
                 user.cardToken = userDict["stripe_token"] as! String
                 user.penalty = userDict["penalty_value"] as! Int
                 user.exercisesPerWeek = userDict["number_of_exercises"] as! Int
+                user.paymentActive = userDict["payment_active"] as? Bool ?? false
                 UserSource.sharedInstance.setCurrentUser(user: user)
                 
                 Coordinator.presentContractViewController()

@@ -253,7 +253,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-7l-TOJ">
-                                <rect key="frame" x="177" y="363" width="21" height="20"/>
+                                <rect key="frame" x="177.5" y="363" width="21" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RpM-7l-TOJ" secondAttribute="height" multiplier="21:20" id="Nfz-g5-uRM"/>
                                 </constraints>
@@ -425,7 +425,7 @@
                                             <constraint firstAttribute="height" constant="20" id="P3w-mJ-ISV"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="Modify or cancel">
+                                            <fragment content="Cancel">
                                                 <attributes>
                                                     <color key="NSColor" red="0.52549019610000003" green="0.5568627451" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" metaFont="system" size="14"/>
@@ -496,18 +496,28 @@
                                             <constraint firstAttribute="height" constant="150" id="u90-ah-kZY"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5c-DT-ZbG">
+                                        <rect key="frame" x="16" y="190" width="302" height="20"/>
+                                        <connections>
+                                            <action selector="modifyPressed" destination="E4n-hj-Y92" eventType="touchUpInside" id="2ZE-Yp-MJ8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="NUV-fp-jJo" firstAttribute="top" secondItem="1pb-cz-eJ0" secondAttribute="top" constant="69" id="3VK-9L-QH0"/>
                                     <constraint firstAttribute="trailing" secondItem="9WA-pt-QcV" secondAttribute="trailing" constant="16" id="6JY-vn-3NT"/>
+                                    <constraint firstItem="S5c-DT-ZbG" firstAttribute="centerX" secondItem="9WA-pt-QcV" secondAttribute="centerX" id="Cww-NN-yND"/>
                                     <constraint firstAttribute="trailing" secondItem="mt8-dz-Ic0" secondAttribute="trailing" constant="16" id="IEh-vz-Xlb"/>
                                     <constraint firstItem="9WA-pt-QcV" firstAttribute="top" secondItem="mt8-dz-Ic0" secondAttribute="bottom" id="LOV-59-ph6"/>
                                     <constraint firstItem="9WA-pt-QcV" firstAttribute="leading" secondItem="1pb-cz-eJ0" secondAttribute="leading" constant="16" id="Och-ZT-qpc"/>
                                     <constraint firstAttribute="trailing" secondItem="ZdG-K2-TKu" secondAttribute="trailing" id="ZrE-D7-Twu"/>
                                     <constraint firstAttribute="bottom" secondItem="NUV-fp-jJo" secondAttribute="bottom" constant="92" id="bSt-FT-rMs"/>
                                     <constraint firstItem="NUV-fp-jJo" firstAttribute="leading" secondItem="1pb-cz-eJ0" secondAttribute="leading" id="dik-ik-SBV"/>
+                                    <constraint firstItem="S5c-DT-ZbG" firstAttribute="height" secondItem="9WA-pt-QcV" secondAttribute="height" id="fAi-9B-ZsB"/>
+                                    <constraint firstItem="S5c-DT-ZbG" firstAttribute="centerY" secondItem="9WA-pt-QcV" secondAttribute="centerY" id="hpU-a0-5ma"/>
                                     <constraint firstAttribute="bottom" secondItem="9WA-pt-QcV" secondAttribute="bottom" constant="16" id="i1U-VD-jlm"/>
+                                    <constraint firstItem="S5c-DT-ZbG" firstAttribute="width" secondItem="9WA-pt-QcV" secondAttribute="width" id="o3J-ua-f37"/>
                                     <constraint firstAttribute="height" constant="226" id="oN8-kl-xEU"/>
                                     <constraint firstItem="0xD-s8-Tbk" firstAttribute="top" secondItem="1pb-cz-eJ0" secondAttribute="top" constant="8" id="ol7-iq-vLH"/>
                                     <constraint firstItem="0xD-s8-Tbk" firstAttribute="centerX" secondItem="1pb-cz-eJ0" secondAttribute="centerX" id="qYT-Mj-eJL"/>
@@ -585,6 +595,7 @@
                         <outlet property="rewardLabel" destination="cnY-gF-IxS" id="nXr-u9-hzt"/>
                         <outlet property="tableView" destination="2vB-tg-mDT" id="aPN-Sx-8f5"/>
                         <outlet property="totalLabel" destination="m1e-Lt-8tk" id="R0j-qT-8SP"/>
+                        <outlet property="trackWorkoutButton" destination="4Sx-23-m1q" id="g7C-Mr-l6M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vG9-Ba-qdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -794,7 +805,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcj-Fr-5dj">
-                                <rect key="frame" x="177" y="397" width="21" height="20"/>
+                                <rect key="frame" x="177.5" y="397" width="21" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lcj-Fr-5dj" secondAttribute="height" multiplier="21:20" id="ekH-Uf-KnU"/>
                                 </constraints>

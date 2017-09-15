@@ -20,6 +20,19 @@ class FirebaseManager {
         self.databaseRef = Database.database().reference()
     }
     
+    func prepare() {
+        currentUserReference()?.observe(.value, with: {
+            guard let userDict = $0.value as? [String : Any] else { return }
+            
+            UserSource.sharedInstance.currentUser()?.cardToken = userDict["stripe_token"] as! String
+            UserSource.sharedInstance.currentUser()?.penalty = userDict["penalty_value"] as! Int
+            UserSource.sharedInstance.currentUser()?.exercisesPerWeek = userDict["number_of_exercises"] as! Int
+            UserSource.sharedInstance.currentUser()?.paymentActive = userDict["payment_active"] as? Bool ?? false
+            
+            NotificationCenter.default.post(name: Notification.Name("UserChangedNotification"), object: nil)
+        })
+    }
+    
     func userWithIdentifier(identifier: String, completion: @escaping ([String: AnyObject]?) -> ()) {
         let userReference = self.userReference(identifier: identifier)
         userReference.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -41,7 +54,17 @@ class FirebaseManager {
                                 "penalty_value": penalty,
                                 "stripe_token": cardToken,
                                 "card_name": cardName,
-                                "card_number": cardNumber])
+                                "card_number": cardNumber,
+                                "payment_active" : true
+                                ])
+    }
+    
+    func activatePayment() {
+        currentUserReference()?.child("payment_active").setValue(true)
+    }
+    
+    func cancelPayment() {
+        currentUserReference()?.child("payment_active").setValue(false)
     }
     
     //MARK: - Private

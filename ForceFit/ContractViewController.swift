@@ -10,6 +10,7 @@ import UIKit
 
 class ContractViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var trackWorkoutButton: UIButton!
     @IBOutlet weak var progressView: ProgressView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var completedLabel: UILabel!
@@ -28,16 +29,27 @@ class ContractViewController: UIViewController, UITableViewDelegate, UITableView
         subsribeToNotifications()
         
         WorkoutsManager.shared.prepare()
+        FirebaseManager.shared.prepare()
     }
 
     private func subsribeToNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(ContractViewController.workoutsUpdated), name: WorkoutsManager.shared.workoutsChangedNotification, object: WorkoutsManager.shared)
+        NotificationCenter.default.addObserver(self, selector: #selector(ContractViewController.setupContractView), name: Notification.Name("UserChangedNotification"), object: nil)
     }
     
     //MARK: Actions
     
     @IBAction private func trackPressed() {
         WorkoutsManager.shared.addWorkout()
+    }
+    
+    @IBAction private func modifyPressed() {
+        if UserSource.sharedInstance.currentUser()!.paymentActive {
+            FirebaseManager.shared.cancelPayment()
+        }
+        else {
+            FirebaseManager.shared.activatePayment()
+        }
     }
     
     //MARK: - UITableViewDelegate/DataSource
@@ -61,12 +73,13 @@ class ContractViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationItem.title = "MY WORKOUTS".localized
     }
     
-    private func setupContractView() {
-        self.completedLabel.text = "0/" + String(UserSource.sharedInstance.currentUser()!.exercisesPerWeek)
+    @objc private func setupContractView() {
         self.totalLabel.text = "0"
         self.rewardLabel.text = "$0.00"
+        self.modifyContractLabel.text = UserSource.sharedInstance.currentUser()!.paymentActive ? "Cancel" : "Activate"
         self.penaltyLabel.text = "You pay".localized + " $\(UserSource.sharedInstance.currentUser()!.penalty).00 " + "per missed workout.".localized
         self.modifyContractLabel.attributedText = NSAttributedString(string: self.modifyContractLabel.attributedText!.string, attributes: [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+        self.trackWorkoutButton.isHidden = !UserSource.sharedInstance.currentUser()!.paymentActive
     }
     
     private func setupTableView() {
