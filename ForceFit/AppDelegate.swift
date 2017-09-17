@@ -10,7 +10,9 @@ import UIKit
 import CoreData
 import Firebase
 import FBSDKCoreKit
+import FirebaseDatabase
 import Stripe
+import ObjectMapper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        STPPaymentConfiguration.shared().publishableKey = "pk_live_ETfR8UByXHKehjcGBUd6Vi78"
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_edTODaTZkGKoA5XqpStMyatt"
         
         if let font = UIFont(name: "Industry-Bold", size: 16) {
             UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font]
@@ -46,7 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        RewardManager.shared.calculateReward()
+    }
+    
+    private func calculateRewardOrCharging(from startDate: Date, till endDate: Date) {
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

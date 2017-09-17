@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2159D21F6ECCCA000927FE /* RewardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2159D11F6ECCCA000927FE /* RewardManager.swift */; };
 		3DD162901F6A6BC30033299B /* WorkoutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD1628F1F6A6BC30033299B /* WorkoutsManager.swift */; };
 		3DD162921F6A84020033299B /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD162911F6A84010033299B /* Workout.swift */; };
-		3DD162941F6ACD170033299B /* Date+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD162931F6ACD170033299B /* Date+Creation.swift */; };
 		3DEBC2C81F67F75F005B2C0B /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBC2C71F67F75F005B2C0B /* String+Localized.swift */; };
 		8107C6431F4F42310021BF01 /* ForceFitCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8107C6421F4F42310021BF01 /* ForceFitCalculator.swift */; };
 		81091C3A1F42DC2400D50DD5 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81091C391F42DC2400D50DD5 /* UIUtils.swift */; };
@@ -59,9 +59,9 @@
 
 /* Begin PBXFileReference section */
 		3072F021C49D1AB23B75A33E /* Pods-ForceFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForceFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForceFit/Pods-ForceFit.release.xcconfig"; sourceTree = "<group>"; };
+		3D2159D11F6ECCCA000927FE /* RewardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardManager.swift; sourceTree = "<group>"; };
 		3DD1628F1F6A6BC30033299B /* WorkoutsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsManager.swift; sourceTree = "<group>"; };
 		3DD162911F6A84010033299B /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
-		3DD162931F6ACD170033299B /* Date+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Creation.swift"; sourceTree = "<group>"; };
 		3DEBC2C71F67F75F005B2C0B /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		63BD7EE85457B7ACC7D64F23 /* Pods_ForceFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForceFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8107C6421F4F42310021BF01 /* ForceFitCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForceFitCalculator.swift; path = Helpers/ForceFitCalculator.swift; sourceTree = "<group>"; };
@@ -173,6 +173,7 @@
 				818899851F44230B0032DD6E /* ValidationManager.swift */,
 				8155BBF41F48330C006F4786 /* StripeManager.swift */,
 				3DD1628F1F6A6BC30033299B /* WorkoutsManager.swift */,
+				3D2159D11F6ECCCA000927FE /* RewardManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -231,7 +232,6 @@
 			children = (
 				81CE10301F45B20700432F0D /* UIView+Extensions.swift */,
 				3DEBC2C71F67F75F005B2C0B /* String+Localized.swift */,
-				3DD162931F6ACD170033299B /* Date+Creation.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -455,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81091C3D1F42E3CF00D50DD5 /* LoginViewController.swift in Sources */,
+				3D2159D21F6ECCCA000927FE /* RewardManager.swift in Sources */,
 				81091C3A1F42DC2400D50DD5 /* UIUtils.swift in Sources */,
 				81091C421F42FA6E00D50DD5 /* FirebaseManager.swift in Sources */,
 				812A50AA1F46DCA4008E933B /* TermsCell.swift in Sources */,
@@ -470,7 +471,6 @@
 				815EF34B1F46623400D44434 /* PaymentCell.swift in Sources */,
 				813424BB1F473854008702F3 /* PreviousWeekCell.swift in Sources */,
 				81CE10341F45DF3800432F0D /* PenaltyCell.swift in Sources */,
-				3DD162941F6ACD170033299B /* Date+Creation.swift in Sources */,
 				81091C471F43037D00D50DD5 /* BaseViewController.swift in Sources */,
 				3DD162921F6A84020033299B /* Workout.swift in Sources */,
 				81CE102D1F45B07100432F0D /* ContractCell.swift in Sources */,

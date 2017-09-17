@@ -58,7 +58,8 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - ObjectMapper (2.2.8)
-  - Stripe (11.2.0)
+  - Stripe (11.3.0)
+  - SwiftDate (4.4.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -72,6 +73,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - ObjectMapper
   - Stripe
+  - SwiftDate
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
@@ -91,8 +93,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
-  Stripe: 898f83a95d72180c6eb4acd65b2ae6158fc6a8bd
+  Stripe: 3c86dc18af21e59dd559aa15e83cb501248f9903
+  SwiftDate: a70a534d4feed03b2a2b575e36bef82dc2286a8d
 
-PODFILE CHECKSUM: 32714a70909ca27d69c26691a9fba4d6fc547049
+PODFILE CHECKSUM: bde44e69c9a7bd1cd1ba3b6caee113a2c6b45c5c
 
 COCOAPODS: 1.2.1

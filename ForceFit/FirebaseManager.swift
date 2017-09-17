@@ -11,6 +11,8 @@ import Foundation
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import ObjectMapper
+import SwiftDate
 
 class FirebaseManager {
     static let shared = FirebaseManager()
@@ -33,6 +35,18 @@ class FirebaseManager {
         })
     }
     
+    func currentUser(with completion: @escaping ([String: Any]?) -> ()) {
+        let userReference = currentUserReference()
+        userReference?.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dict = snapshot.value as? [String: Any] else {
+                completion(nil)
+                return
+            }
+            completion(dict)
+        })
+    }
+
+    
     func userWithIdentifier(identifier: String, completion: @escaping ([String: AnyObject]?) -> ()) {
         let userReference = self.userReference(identifier: identifier)
         userReference.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -50,13 +64,17 @@ class FirebaseManager {
             completion()
         })
         
-        userReference?.setValue(["number_of_exercises": exercises,
-                                "penalty_value": penalty,
-                                "stripe_token": cardToken,
-                                "card_name": cardName,
-                                "card_number": cardNumber,
-                                "payment_active" : true
-                                ])
+        let value: [String : Any] = [
+            "number_of_exercises": exercises,
+            "penalty_value": penalty,
+            "stripe_token": cardToken,
+            "card_name": cardName,
+            "card_number": cardNumber,
+            "payment_active" : true,
+            "last_verified" : DateTransform().transformToJSON(Date().endWeek) ?? 0
+        ]
+        
+        userReference?.setValue(value)
     }
     
     func activatePayment() {
@@ -70,7 +88,7 @@ class FirebaseManager {
     //MARK: - Private
     
     func currentUserReference() -> DatabaseReference? {
-        guard let id = UserSource.sharedInstance.currentUser()?.userIdentifier else {
+        guard let id = Auth.auth().currentUser?.uid else {
             return nil
         }
         

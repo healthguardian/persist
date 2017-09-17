@@ -10,6 +10,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 import ObjectMapper
+import SwiftDate
 
 class WorkoutsManager {
     static let shared = WorkoutsManager()
@@ -42,10 +43,18 @@ class WorkoutsManager {
     }
     
     func prepare() {
+        
+        fetchWorkouts(from: Date().startWeek, to: Date().endWeek) {
+            self.workouts = $0
+        }
+    }
+    
+    func fetchWorkouts(from startDate: Date, to endDate: Date, with callback: @escaping ((_ workouts: [Workout]) -> Void)) {
+        
         let transform = DateTransform()
         
-        let startWeekValue = transform.transformToJSON(Date().startOfWeek)
-        let endWeekValue = transform.transformToJSON(Date().endOfWeek)
+        let startWeekValue = transform.transformToJSON(startDate)
+        let endWeekValue = transform.transformToJSON(endDate)
         
         userWorkoutsRef?
             .queryOrdered(byChild: "created")
@@ -65,7 +74,7 @@ class WorkoutsManager {
                     workouts.append(workout)
                 }
                 
-                self.workouts = workouts
+                callback(workouts)
             })
     }
 }

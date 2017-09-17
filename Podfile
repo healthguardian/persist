@@ -18,4 +18,5 @@ use_frameworks!
     
     pod 'MBProgressHUD', '~> 1.0.0'
     pod 'ObjectMapper'
+    pod 'SwiftDate'
 end
